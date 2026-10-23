@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">平生述</string>
+    <string name="title_activity_main">平生述</string>
+    <string name="package_name">cn.pingshengshu.app</string>
+    <string name="custom_url_scheme">cn.pingshengshu.app</string>
+</resources>

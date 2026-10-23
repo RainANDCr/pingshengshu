@@ -1,0 +1,10 @@
+{
+  "appId": "cn.pingshengshu.app",
+  "appName": "平生述",
+  "webDir": "www",
+  "android": {
+    "backgroundColor": "#F8F6F1",
+    "allowMixedContent": false
+  },
+  "server": { "androidScheme": "https" }
+}

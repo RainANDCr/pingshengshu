@@ -1,0 +1,22 @@
+{
+  "name": "pingshengshu",
+  "version": "3.0.0",
+  "description": "平生述 —— AI 人生回忆录（Windows 桌面版）",
+  "author": "平生述",
+  "license": "UNLICENSED",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack:win": "electron-builder --win portable --x64"
+  },
+  "devDependencies": {
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "cn.pingshengshu.app",
+    "productName": "平生述",
+    "files": ["main.js", "index.html"],
+    "win": { "target": ["portable"], "signAndEditExecutable": false }
+  }
+}

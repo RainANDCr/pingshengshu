@@ -1,0 +1,22 @@
+# === 依赖 ===
+node_modules/
+
+# === 构建产物 ===
+dist/
+build/
+out/
+.gradle/
+
+# === Android 本地配置与签名（密钥，严禁提交） ===
+local.properties
+keystore.properties
+*.keystore
+*.jks
+
+# === 系统与临时 ===
+.DS_Store
+Thumbs.db
+*.log
+_test_*.html
+_test_*.js
+_check.js
