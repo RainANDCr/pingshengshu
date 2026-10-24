@@ -1249,19 +1249,8 @@ const main = $("#main");
 /* ---------- 数据层 ---------- */
 const seed = () => ({
   profile:{ name:"我", birthDate:"2001-03-15" },
-  memories:[
-    {id:"m1",title:"糖纸",content:"和妈妈聊天时，又想起我八岁时的趣事。那天偷偷把糖纸收藏在铁盒里，像是在保存一个秘密。",eventDate:"2009-06-15",age:8,place:"",tags:["童年","妈妈"],prompt:"你还记得小时候最喜欢的玩具吗？",createdAt:1},
-    {id:"m2",title:"下雨",content:"看着外面下的暴雨，突然想起那年我八岁，记得放学没带伞，和小伙伴在雨里奔跑……",eventDate:"2009-07-02",age:8,place:"老家巷口",tags:["童年","伙伴"],prompt:"",createdAt:2},
-    {id:"m3",title:"小花",content:"其实我之前就觉得自己有点神经，哈哈，八岁的小小的我，竟然也会为了一朵路边的小花开心。",eventDate:"2009-04-20",age:8,place:"",tags:["童年"],prompt:"",createdAt:3},
-    {id:"m4",title:"外婆的厨房",content:"记得夏天的傍晚，外婆总是在厨房里忙着，蒲扇摇出的风都是饭菜香。",eventDate:"2015-08-10",age:14,place:"外婆家",tags:["家庭","夏天"],prompt:"",createdAt:4},
-    {id:"m5",title:"第一次离家",content:"拖着行李箱走出车站的那一刻，风很大，心里既慌张又期待。",eventDate:"2019-09-01",age:18,place:"大学",tags:["青春","第一次"],prompt:"第一次离开家乡是什么感觉？",createdAt:5},
-    {id:"m6",title:"那年的夏天",content:"阳光很大，我们在树下打着伞，一人一半西瓜，笑声比蝉还响。",eventDate:"2016-07-21",age:15,place:"",tags:["青春","夏天"],prompt:"",createdAt:6},
-  ],
-  letters:[
-    {id:"l1",title:"写给二十五岁的自己",body:"此刻的我，正站在人生的岔路口。希望那时的你，依然热爱生活，依然温柔而有力量。",createdAt:"2024-06-15",unlockAt:"2026-03-15",status:"sealed",cover:1},
-    {id:"l2",title:"写给三十岁的自己",body:"愿你不被生活磨平棱角，依然温柔而坚定。",createdAt:"2024-05-01",unlockAt:"2029-05-01",status:"sealed",cover:2},
-    {id:"l3",title:"写给四十岁的自己",body:"期待与你重逢，看看那时的你，过得怎么样。",createdAt:"2025-01-01",unlockAt:"2035-01-01",status:"sealed",cover:3},
-  ],
+  memories:[],
+  letters:[],
   favPrompts:[],
   ai:{provider:"deepseek",key:"",model:"deepseek-chat"},
   book:{title:"平生述：我的人生故事",author:"我",preface:"这不是一本关于成功的书，而是一个普通人对生活的记录。关于成长的困惑、选择的勇气、爱过的人、走过的路，和那些让生命发光的平凡瞬间。"},
@@ -1290,16 +1279,8 @@ const seed = () => ({
     {id:"pc6",name:"特别之处",icon:"📍",color:"#E2D3C2",isBuiltIn:true,sortOrder:6},
     {id:"pc7",name:"其他",icon:"📌",color:"#DCD6C9",isBuiltIn:true,sortOrder:7},
   ],
-  places:[
-    {id:"p1",name:"老家",description:"小时候住过的地方，巷口那棵老槐树还在。",categoryId:"pc1",city:"",region:"",country:"中国",latitude:null,longitude:null,coordinateSystem:null,locationPrecision:"无坐标",firstVisitedAt:"",lastVisitedAt:"",datePrecision:"",coverMediaId:null,createdAt:1,updatedAt:1},
-    {id:"p2",name:"外婆家",description:"夏天的傍晚，外婆总是在厨房里忙碌。",categoryId:"pc1",city:"",region:"",country:"中国",latitude:null,longitude:null,coordinateSystem:null,locationPrecision:"无坐标",firstVisitedAt:"",lastVisitedAt:"",datePrecision:"",coverMediaId:null,createdAt:2,updatedAt:2},
-    {id:"p3",name:"大学",description:"拖着行李箱走出车站的那一刻，风很大。",categoryId:"pc2",city:"北京",region:"北京市",country:"中国",latitude:39.90,longitude:116.40,coordinateSystem:"WGS84",locationPrecision:"城市级",firstVisitedAt:"2019-09-01",lastVisitedAt:"",datePrecision:"精确",coverMediaId:null,createdAt:3,updatedAt:3},
-  ],
-  memoryPlaceLinks:[
-    {id:"pl1",memoryId:"m2",placeId:"p1",sortOrder:1,createdAt:1},
-    {id:"pl2",memoryId:"m4",placeId:"p2",sortOrder:1,createdAt:2},
-    {id:"pl3",memoryId:"m5",placeId:"p3",sortOrder:1,createdAt:3},
-  ],
+  places:[],
+  memoryPlaceLinks:[],
   personCategories:[
     {id:"rc1",name:"家人",icon:"👨‍👩‍👧",color:"#C8A780",isBuiltIn:true,sortOrder:1},
     {id:"rc2",name:"朋友",icon:"🤝",color:"#B5C2B8",isBuiltIn:true,sortOrder:2},
