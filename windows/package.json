@@ -17,6 +17,7 @@
     "appId": "cn.pingshengshu.app",
     "productName": "平生述",
     "files": ["main.js", "index.html"],
-    "win": { "target": ["portable"], "signAndEditExecutable": false }
+    "icon": "icon.ico",
+    "win": { "target": ["portable"], "signAndEditExecutable": false, "icon": "icon.ico" }
   }
 }
