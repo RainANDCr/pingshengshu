@@ -1211,7 +1211,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
     <button data-go="people">人　物</button>
     <button data-go="goals">期　许</button>
     <button data-go="me">我　的</button>
-    <div class="foot">第一阶段 · 视觉原型<br>演示模式 v2.0</div>
+    <div class="foot">V3.0.0 · 三端完整版</div>
   </nav>
 
   <main id="main"></main>
@@ -1238,9 +1238,9 @@ svg.leaflet-image-layer.leaflet-interactive path {
 </script>
 <script>
 /* =====================================================
-   平生述 · 第一阶段视觉原型（演示模式）
-   数据保存在 localStorage；AI / 云端 / 未来信件服务端解锁
-   均为演示实现，接入真实服务见 README 第二阶段说明。
+   平生述 · V3.0.0 三端完整版（Web / Windows / Android 共用同一内核）
+   主数据存 IndexedDB，草稿存 localStorage；BYOK AI 客户端直连；
+   WebDAV 云备份为真实功能。详见 README。
    ===================================================== */
 const LS_KEY = "pingshengshu_data_v1";
 const $ = s => document.querySelector(s);
@@ -4884,7 +4884,7 @@ function ViewMe(){
     <div class="set-row" onclick="go('agreement')"><div><h4>📜 用户协议</h4><p>使用本应用即表示同意以下条款</p></div><span class="arr">›</span></div>
     <div class="set-row" onclick="clearData()"><div><h4>🗑 清空本地数据</h4><p>删除所有回忆/信件/图片/录音（不可恢复）</p></div><span class="arr">›</span></div>
   </div>
-  <p style="text-align:center;margin-top:24px" class="sub">平生述 v2.0 · 本地存储占用 ${fmtSize(storageUsage())}</p>`;
+  <p style="text-align:center;margin-top:24px" class="sub">平生述 v3.0.0 · 本地存储占用 ${fmtSize(storageUsage())}</p>`;
 }
 function editBirth(){
   const v = prompt("请输入出生日期（YYYY-MM-DD）：", db.profile.birthDate||"");
@@ -5417,7 +5417,7 @@ function extOf(dataUrl){
 function sanitize(s){ return (s||"无题").replace(/[\\/:*?"<>|]/g,"_").slice(0,30); }
 function exportZIP(){
   const enc=new TextEncoder(); const files=[];
-  files.push({name:"manifest.json", data:enc.encode(JSON.stringify({app:"平生述",version:"2.0.0",exportedAt:new Date().toISOString(),counts:{memories:db.memories.length,letters:db.letters.length,places:(db.places||[]).length,persons:(db.persons||[]).length,goals:(db.goals||[]).length,fragments:(db.fragments||[]).length,fragmentLinks:(db.fragmentMemoryLinks||[]).length}},null,2))});
+  files.push({name:"manifest.json", data:enc.encode(JSON.stringify({app:"平生述",version:"3.0.0",exportedAt:new Date().toISOString(),counts:{memories:db.memories.length,letters:db.letters.length,places:(db.places||[]).length,persons:(db.persons||[]).length,goals:(db.goals||[]).length,fragments:(db.fragments||[]).length,fragmentLinks:(db.fragmentMemoryLinks||[]).length}},null,2))});
   const clean=JSON.parse(JSON.stringify(db)); if(clean.ai) clean.ai.key=""; if(clean.webdav) clean.webdav.pass="";
   files.push({name:"data.json", data:enc.encode(JSON.stringify(clean,null,2))});
   db.memories.forEach((m,i)=>{
@@ -5513,7 +5513,7 @@ function exportThematicZIP(bookId){
   const snap=thematicBookSnapshot(bookId); if(!snap) return;
   const enc=new TextEncoder(); const files=[];
   const b=snap.book;
-  files.push({name:"manifest.json", data:enc.encode(JSON.stringify({app:"平生述",type:"thematic",bookType:"thematic",bookId:b.id,title:b.title,version:"2.0.0",exportedAt:new Date().toISOString(),counts:{chapters:snap.chapters.length,entries:snap.total}},null,2))});
+  files.push({name:"manifest.json", data:enc.encode(JSON.stringify({app:"平生述",type:"thematic",bookType:"thematic",bookId:b.id,title:b.title,version:"3.0.0",exportedAt:new Date().toISOString(),counts:{chapters:snap.chapters.length,entries:snap.total}},null,2))});
   const structure={book:b, chapters:snap.chapters.map(c=>({id:c.id,title:c.title,sortOrder:c.sortOrder, entries:(snap.entries.find(s=>s.chapter.id===c.id)||{list:[]}).list.map(e=>({memoryId:e.memoryId, title:e.memory?e.memory.title:"(已删除)", sortOrder:e.sortOrder}))}))};
   files.push({name:"专题结构.json", data:enc.encode(JSON.stringify(structure,null,2))});
   const memMap=new Map(); // 附件按 memoryId 去重，跨章重复只存一份
